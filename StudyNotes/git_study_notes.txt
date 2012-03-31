@@ -1,0 +1,30 @@
+1.Git 安装
+源码安装根据官网来就行了，
+Mac下的安装就更简单了，从http://code.google.com/p/git-osx-installer/下载最新的安装包后，双击弹出一个文件浏览窗口，然后双击窗口里带pkg后缀的文件就可以安装了。Git的操作都可以在终端上使用命令来完成，但也不是所有人都喜欢打命令。http://code.google.com/p/git-osx-installer上也提供了一个Git的图形化客户端：OpenInGitGui，可以qu这里获得，OpenInGitGui十分小巧，下载解压后也只有16K，OpenInGitGui不用安装，双击即可使用，OpenInGitGui刚启动时，会记录打开过的资源库，这个功能很贴心。
+
+2.Git的几个常用命令
+git init:创建一个版本库
+git config: 配置git，可以通过--global来使配置对所有的Git用户生效，--list查看所有的配置
+git add <dir>/file:把一个目录下的所有文件/文件加入版本库
+git commit -m "<message>":把加入版本库的文件修改提交到版本库，记住，加入版本库和提交到版本库的概念是不一样的。
+git status：当前版本库的一个状态，修改了哪些东西？有没有冲突等等。
+git log：当前版本库的所有修改记录
+git branch：Git的分支操作，-m <old_branch> <new_branch>更改分支名；<new_branch> <master_branch>从某个分支创建新的分支，默认主分支为master，如果已存在，会报错；-d <branch_name>删除分支，注意，不能删除当前分支；
+git checkout <brach_name>：切换当前分支 
+git merge <branch_name>：合并2个分支，--squash压缩合并，把被合并分支的所有修改压缩为一个修改。
+git cherry-pick <version-code>:合并分支上的某个修改，
+git log <version-code>：从某个版本到当前版本的所有提交。--since="<time-format>"从多久前到现在的修改。--before=“<time-format>”，多久前的所有提交。<from-version>..<to-version>2个版本之间的所有提交
+git diff <version-code>：比较2个版本的之间的差异 ，--stat 2个版本之间所有变更的差异统计
+git blame：查明某个文件，或者某个内容的修改历史记录
+
+3.Git和GitHub的配合
+首先配置好Git和Github之间的SSH通道，方式如下：http://help.github.com/mac-set-up-git/
+
+如何把自己本地创建的版本库推送到GitHub的Repository中呢？
+首先，创建一个Repository，在创建过程中，GitHub会给出一整个guideline，一步一步就可以把自己的版本库Push到github上。涉及到的git指令有
+git remote add origin <github-repository> 为远程版本库创键一个别名
+git push origin master:把本地的代码库推送到远程的版本库中。
+git remote show ：查看当前版本库上所有的远程版本库。
+git remote rm <alias> ：删除一个远程版本库。
+
+	
