@@ -20,7 +20,6 @@ public class ChessBoard {
 
     public void put(Pawn pawn, ChessBoardPoint point) {
         pawn.setChessboard(this);
-        pawn.setX(point.getX());
-        pawn.setY(point.getY());
+        pawn.setChessBoardPosition(point);
     }
 }

@@ -7,8 +7,7 @@ package chess;
  * Time: 6:10 PM
  */
 public class Pawn {
-    private int x;
-    private int y;
+    private ChessBoardPoint position;
     private ChessBoard chessboard;
 
     public boolean isCheckMate() {
@@ -16,7 +15,7 @@ public class Pawn {
     }
 
     private boolean isKingCheckmated(ChessBoardPoint point) {
-        return x - 1 == point.getX() && y - 1 == point.getY();
+        return position.getX() - 1 == point.getX() && position.getY() - 1 == point.getY();
     }
 
     private King getKing() {
@@ -27,11 +26,7 @@ public class Pawn {
         this.chessboard = chessboard;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public void setX(int x) {
-        this.x = x;
+    public void setChessBoardPosition(ChessBoardPoint point) {
+        this.position = point;
     }
 }
