@@ -22,4 +22,14 @@ public class ChessBoard {
         pawn.setChessboard(this);
         pawn.setChessBoardPosition(point);
     }
+
+    public void addKing(King aking, ChessBoardPoint chessBoardPoint) {
+        this.king= aking;
+        this.king.setPoint(chessBoardPoint);
+    }
+
+    public void addRook(Rook arook, ChessBoardPoint chessBoardPoint) {
+        arook.setChessboard(this);
+        arook.setChessboardPosition(chessBoardPoint);
+    }
 }
