@@ -15,7 +15,7 @@ import java.util.*;
  * Time: 10:39 AM
  * To change this template use File | Settings | File Templates.
  */
-public class ListProcess {
+class ListProcess {
     public static List<Integer> addOne(List<Integer> inputList) {
         return Lists.transform(inputList, new Function<Integer, Integer>() {
             @Override

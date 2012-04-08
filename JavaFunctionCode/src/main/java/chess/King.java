@@ -9,8 +9,6 @@ package chess;
  */
 public class King {
     private ChessBoardPoint point;
-    private int x;
-    private int y;
 
     public void setPoint(ChessBoardPoint point) {
         this.point = point;
@@ -19,5 +17,4 @@ public class King {
     public ChessBoardPoint getPosition() {
         return point;
     }
-
 }

@@ -6,30 +6,33 @@ package chess;
  * Date: 3/31/12
  * Time: 6:09 PM
  */
-public class ChessBoard {
+class ChessBoard {
     private King king;
 
-    public King getKing() {
-        return king;
+    private void setPawn(Pawn pawn) {
+        this.pawn = pawn;
     }
+
+    private Pawn pawn;
 
     public void put(King king, ChessBoardPoint point) {
         this.king = king;
         king.setPoint(point);
     }
 
-    public void put(Pawn pawn, ChessBoardPoint point) {
-        pawn.setChessboard(this);
-        pawn.setChessBoardPosition(point);
+    public void put(ChessPiece chessPiece, ChessBoardPoint point) {
+        if(chessPiece instanceof  Pawn){
+            setPawn((Pawn) chessPiece);
+        }
+        chessPiece.setChessboard(this);
+        chessPiece.setPosition(point);
     }
 
-    public void addKing(King aking, ChessBoardPoint chessBoardPoint) {
-        this.king= aking;
-        this.king.setPoint(chessBoardPoint);
+    public ChessBoardPoint getKingPosition(){
+        return king.getPosition();
     }
 
-    public void addRook(Rook arook, ChessBoardPoint chessBoardPoint) {
-        arook.setChessboard(this);
-        arook.setChessboardPosition(chessBoardPoint);
+    public Pawn getPawn() {
+        return pawn;
     }
 }

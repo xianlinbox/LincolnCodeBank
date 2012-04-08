@@ -8,8 +8,8 @@ package chess;
  * To change this template use File | Settings | File Templates.
  */
 public class ChessBoardPoint {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public ChessBoardPoint(int x, int y) {
         this.x = x;
@@ -22,5 +22,13 @@ public class ChessBoardPoint {
 
     public int getY() {
         return y;
+    }
+
+    public boolean isOnSameLine(ChessBoardPoint point) {
+        return getX() == point.getX() || getY() == point.getY();
+    }
+
+    public boolean isAtTopLeft(ChessBoardPoint point) {
+        return getX() - 1 == point.getX() && getY() - 1 == point.getY();
     }
 }
